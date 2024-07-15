@@ -1,0 +1,289 @@
+/////////////////////////////ROOM COMPONENT///////////////////////////////////
+        const roomInfoDiv = document.getElementById('roomInfo')
+        console.log(appliancesList[0]?.appliance) //prints undefined
+        for(let i = 0; i < appliancesList?.length; i++){
+            if(appliancesList[i].roomName == roomName){
+                let currentApplianceDiv = document.createElement('div')
+                let currentApplianceParagraph = document.createElement('p')
+
+                console.log(appliancesList[i].appliance);
+
+                currentApplianceParagraph.innerHTML = appliancesList[i].appliance
+                currentApplianceDiv.style.border = '1px solid black'
+                currentApplianceDiv.style.backgroundColor = 'red'
+
+                currentApplianceDiv.addEventListener('click', () => {
+                    if(currentApplianceDiv.style.backgroundColor == 'red')
+                        currentApplianceDiv.style.backgroundColor = 'green'
+                    else if(currentApplianceDiv.style.backgroundColor == 'green')
+                        currentApplianceDiv.style.backgroundColor = 'red'
+                })
+
+                currentApplianceDiv?.append(currentApplianceParagraph)
+                roomInfoDiv?.append(currentApplianceDiv)
+            }
+        }
+
+
+        for(let i = 0; i < appliancesList?.length; i++){
+            if(appliancesList[i].appliance == 'airconditioner'){
+                console.log(appliancesList[i].appliance);
+                <Airconditioner/>
+            }
+            else if(appliancesList[i].appliance == 'boiler'){
+                <Boiler/>
+            }
+            else if(appliancesList[i].appliance == 'lamp'){
+                <Lamp/>
+            }
+            else if(appliancesList[i].appliance == 'stereo'){
+                <Stereo/>
+            }
+        }
+
+
+
+
+
+                    if(appliancesList?.length == 0){
+                setAppliancesList([
+                {
+                    roomName: roomName,
+                    appliance: selectAppliance?.value
+                }])
+            }
+            else{
+                setAppliancesList([
+                    ...appliancesList,
+                {
+                    roomName: roomName,
+                    appliance: selectAppliance?.valu
+                }])
+            }
+
+
+
+    function createRoom(){
+        let type = localStorage.getItem('type')
+        let name = localStorage.getItem('name')
+        let color = localStorage.getItem('color')
+        
+        for(let i = 0; i < roomsList?.length; i++){
+            if(roomsList[i].type == type && roomsList[i].name == name && roomsList[i].color == color){
+                return(
+                    <div id='roomInfo'>
+                        <h3>Smart House</h3>
+                        <p>Room name: {name}</p>
+                        <p>Room type: {type}</p>
+                        <button onClick={() => addAppliance(name)}>Add appliance</button>
+                        <br />
+                        <br />
+                    </div>)
+            }
+        }
+    }
+
+
+
+            // let homePageRoomDiv = document.getElementById('homePageRoomDiv')
+        // homePageRoomDiv.parentNode.removeChild(homePageRoomDiv)
+
+        // let rooms = document.getElementById('room')
+        // let roomDiv = document.createElement('div')
+        // let header = document.createElement('h3')
+        // let nameP = document.createElement('p')
+        // let typeP = document.createElement('p')
+        // let butten = document.createElement('butten')
+        
+        // header.innerHTML = 'Smart House'
+        // nameP.innerHTML = name
+        // typeP.innerHTML = type
+        // butten.innerHTML = 'Add appliance'
+
+        // butten.addEventListener('click', () => {
+        //     addAppliance(name)
+        // })
+
+        // rooms?.append(roomDiv)
+        // roomDiv?.append(header, nameP, typeP, butten)
+
+
+
+
+
+
+
+
+        
+    // function createRoom(){
+    //     return roomsList?.map((e) => {
+    //         if(e.type == 'kitchen')
+    //             return <Kitchen name={name} color={color} addAppliance={addAppliance}/>
+    //         else if(e.type == 'bedroom')
+    //             return <Bedroom name={name} color={color} addAppliance={addAppliance}/>
+    //         else if(e.type == 'bathroom')
+    //             return <Bathroom name={name} color={color} addAppliance={addAppliance}/>
+    //     })
+    // }
+
+    // function createRoom(){
+    //     let type = localStorage.getItem('type')
+    //     let name = localStorage.getItem('name')
+    //     let color = localStorage.getItem('color')
+        
+    //     for(let i = 0; i < roomsList?.length; i++){
+    //         if(roomsList[i].type == type && roomsList[i].name == name && roomsList[i].color == color){
+    //             return(
+    //                 <div id='roomInfo'>
+    //                     <h3>Smart House</h3>
+    //                     <p>Room name: {name}</p>
+    //                     <p>Room type: {type}</p>
+                        // <button onClick={() => addAppliance(name)}>Add appliance</button>
+    //                     <br />
+    //                     <br />
+    //                 </div>)
+    //         }
+    //     }
+        //WHY THIS DIDN'T WORK??????????????
+        // roomsList?.forEach((e) => {
+        //     if(e.type == type && e.name == name && e.color == color){
+        //         console.log('hey')
+        //         return(
+        //         <div>
+        //             <h3>Smart House</h3>
+        //             <p>Room name: {name}</p>
+        //             <p>Room type: {type}</p>
+        //             <button>Add appliance</button>
+        //         </div>)} 
+        // })
+    // }
+
+
+        // const roomInfoDiv = document.getElementById('roomInfo')
+        // console.log(roomName) //prints undefined
+        // for(let i = 0; i < appliancesList?.length; i++){
+        //     if(appliancesList[i]?.roomName == roomName){
+        //         let currentApplianceDiv = document.createElement('div')
+        //         let currentApplianceParagraph = document.createElement('p')
+
+        //         console.log(appliancesList[i].appliance);
+
+        //         currentApplianceParagraph.innerHTML = appliancesList[i].appliance
+        //         currentApplianceDiv.style.border = '1px solid black'
+        //         currentApplianceDiv.style.backgroundColor = 'red'
+
+        //         currentApplianceDiv.addEventListener('click', () => {
+        //             if(currentApplianceDiv.style.backgroundColor == 'red')
+        //                 currentApplianceDiv.style.backgroundColor = 'green'
+        //             else if(currentApplianceDiv.style.backgroundColor == 'green')
+        //                 currentApplianceDiv.style.backgroundColor = 'red'
+        //         })
+
+        //         currentApplianceDiv?.append(currentApplianceParagraph)
+        //         roomInfoDiv?.append(currentApplianceDiv)
+        //     }
+        // }
+
+
+
+
+////////////////////////HOMEPAGE COMPONENT////////////////////////////////////////
+ function createRoom(type, name, color){
+        const roomsDiv = document.getElementById('rooms')
+        const div = document.createElement('div')
+        const p = document.createElement('p')
+
+        p.innerHTML = name
+        p?.classList.add('name')
+        roomsDiv?.append(div)
+        div?.append(p)
+        div.style.backgroundColor = color
+
+        if(type == 'kitchen'){
+            div.addEventListener('click', () => {
+                localStorage.clear()
+                localStorage.setItem('type', type)
+                localStorage.setItem('name', name)
+                localStorage.setItem('color', color)
+                navigate('/kitchen' + name)})
+        }
+        else if(type == 'bedroom'){
+            div.addEventListener('click', () => {
+                localStorage.clear()
+                localStorage.setItem('type', type)
+                localStorage.setItem('name', name)
+                localStorage.setItem('color', color)
+                navigate('/bedroom' + name)})
+        }
+        else if(type == 'bathroom'){
+            div.addEventListener('click', () => {
+                localStorage.clear()
+                localStorage.setItem('type', type)
+                localStorage.setItem('name', name)
+                localStorage.setItem('color', color)
+                navigate('/bathroom' + name)})
+        }
+ }
+
+
+        if(type == 'kitchen'){
+            navigate('/kitchen' + name)
+        }
+        else if(type == 'bedroom'){
+            navigate('/bedroom' + name)
+        }
+        else if(type == 'bathroom'){
+            navigate('/bathroom' + name)
+        }
+
+
+
+    // function createRoom(type, name, color){
+    //     return <Room type={type} name={name} color={color}/>
+
+
+        // const roomsDiv = document.getElementById('rooms')
+        // const div = document.createElement('div')
+        // const p = document.createElement('p')
+
+        // p.innerHTML = name
+        // roomsDiv?.append(div)
+        // div?.append(p)
+        // div.style.backgroundColor = color
+
+        // if(type == 'kitchen'){
+        //     div.addEventListener('click', () => {
+        //         localStorage.clear()
+        //         localStorage.setItem('type', type)
+        //         localStorage.setItem('name', name)
+        //         localStorage.setItem('color', color)
+        //         navigate('/kitchen' + name)})
+        // }
+        // else if(type == 'bedroom'){
+        //     div.addEventListener('click', () => {
+        //         localStorage.clear()
+        //         localStorage.setItem('type', type)
+        //         localStorage.setItem('name', name)
+        //         localStorage.setItem('color', color)
+        //         navigate('/bedroom' + name)})
+        // }
+        // else if(type == 'bathroom'){
+        //     div.addEventListener('click', () => {
+        //         localStorage.clear()
+        //         localStorage.setItem('type', type)
+        //         localStorage.setItem('name', name)
+        //         localStorage.setItem('color', color)
+        //         navigate('/bathroom' + name)})
+        // }
+
+        // return(
+        //     <div style={{height: '20px', width: '20px', border: '1px solid black', backgroundcolor: color}}>
+        //         <p>{name}</p>
+        //     </div>
+        // )
+    // }
+
+    // function displayRooms(){
+    //     roomsList?.map((e) => {return createRoom(e.type, e.name, e.color)} )
+    //     // roomsList?.forEach((e) => {createRoom(e.type, e.name, e.color)})
+    // }
